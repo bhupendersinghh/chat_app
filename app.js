@@ -16,7 +16,7 @@ app.get("/",  (req, res) => {
 
 server = app.listen(port, process.env.IP);
 
-const io = require("socket.io")(server);
+const io = require("socket.io")(server, { origins: '*:*'});
 
 io.on("connection", (socket) => {
 
