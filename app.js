@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+var port = process.env.PORT || 3000;
+
 //Setting up template engine to ejs
 app.set("view engine", "ejs");
 
@@ -12,7 +14,7 @@ app.get("/",  (req, res) => {
     res.render("index");
 });
 
-server = app.listen(3000);
+server = app.listen(port, process.env.IP);
 
 const io = require("socket.io")(server);
 
